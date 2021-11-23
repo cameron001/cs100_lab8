@@ -2,7 +2,7 @@
 #include "op.hpp"
 #include "iterator.hpp"
 #include "printLat.hpp"
-
+#include "printMathml.hpp"
 
 #include <iostream>
 #include <memory>
@@ -24,6 +24,16 @@ int main() {
 	std::cout << v_->PrintLaTeX(d) << std::endl;
 	std::cout << v_->PrintLaTeX(m) << std::endl;
 	std::cout << v_->PrintLaTeX(ran) << std::endl;
-	delete v_; 
+	delete v_;
+
+	VisitorMathML* t_ = new VisitorMathML();
+	std::cout << t_->PrintMathML(three) << std::endl;
+        std::cout << t_->PrintMathML(ad) << std::endl;
+        std::cout << t_->PrintMathML(minus) << std::endl;
+        std::cout << t_->PrintMathML(expt) << std::endl;
+        std::cout << t_->PrintMathML(d) << std::endl;
+        std::cout << t_->PrintMathML(m) << std::endl;
+        std::cout << t_->PrintMathML(ran) << std::endl;
+ 
 	return 0;
 }
