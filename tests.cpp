@@ -53,7 +53,7 @@ TEST(latexTest, division){
         Base* num2 = new Op(4);
         Base* testval = new Div(num, num2);
         VisitorLatex* v = new VisitorLatex();
-        EXPECT_EQ(v->PrintLaTeX(testval), "${({3.000000}/{4.000000})}$");
+        EXPECT_EQ(v->PrintLaTeX(testval), "${\\frac{3.000000}{4.000000}}$");
         
 }
 TEST(latexTest, negativenums){
@@ -70,7 +70,7 @@ TEST(latexTest, mixingoperations){
         Base* testval = new add(num, num2);
         Base* testval2 = new Div(num, testval);
         VisitorLatex* v = new VisitorLatex();
-        EXPECT_EQ(v->PrintLaTeX(testval2), "${({3.000000}/{3.000000}/{4.000000})}$");
+        EXPECT_EQ(v->PrintLaTeX(testval2), "${\\frac{3.000000}{({3.000000}+{4.000000})}}$");
         
 }
 int main(int argc, char **argv) {

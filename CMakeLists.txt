@@ -9,8 +9,9 @@ ADD_EXECUTABLE(obj
 	iterator.cpp
 )
 
-ADD_EXECUTABLE(unittests
-	tests.cpp	
+ADD_EXECUTABLE(test
+	tests.cpp
+	iterator.cpp	
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
